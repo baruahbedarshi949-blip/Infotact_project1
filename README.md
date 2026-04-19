@@ -3,7 +3,7 @@
 🚀 A full-stack **Retail Point of Sale (POS) & Inventory Management System** built using the **MERN Stack (MongoDB, Express, React, Node.js)**.
 
 🔗 **Live Demo:** 
-
+https://infotact-project1-2-0pl0.onrender.com
 ---
 
 ## 📌 Overview
