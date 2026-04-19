@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // ✅ ADD THIS
 import API from "../api/axios";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate(); // ✅ ADD THIS
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -23,8 +26,8 @@ const Login = () => {
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
-      // ✅ REDIRECT
-      window.location.href = "/dashboard";
+      // ✅ FIXED REDIRECT (VERY IMPORTANT)
+      navigate("/dashboard"); // 🔥 THIS FIXES EVERYTHING
     } catch (err) {
       console.error(err.response?.data || err.message);
       alert(err.response?.data?.message || "Login failed ❌");
@@ -41,7 +44,6 @@ const Login = () => {
         </h2>
 
         <form onSubmit={handleLogin} className="flex flex-col gap-4">
-          {/* EMAIL */}
           <input
             type="email"
             placeholder="Enter email"
@@ -51,7 +53,6 @@ const Login = () => {
             required
           />
 
-          {/* PASSWORD */}
           <input
             type="password"
             placeholder="Enter password"
@@ -61,7 +62,6 @@ const Login = () => {
             required
           />
 
-          {/* BUTTON */}
           <button
             type="submit"
             disabled={loading}
@@ -71,7 +71,6 @@ const Login = () => {
           </button>
         </form>
 
-        {/* HINT */}
         <p className="text-sm text-gray-500 mt-4 text-center">
           Use your registered credentials
         </p>
