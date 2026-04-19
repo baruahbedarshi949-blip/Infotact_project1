@@ -1,3 +1,7 @@
+
+####LIVE WORKING LIKS#####
+https://frontend-g7s0.onrender.com/dashboard
+
 # 🛒 Retail POS System (Full Stack)
 
 A full-stack **Retail Point of Sale (POS) System** built using the **MERN Stack**.
