@@ -27,9 +27,29 @@ const app = express();
 // ==========================
 // ✅ GLOBAL MIDDLEWARES
 // ==========================
+
+// 🔐 Security
 app.use(helmet());
-app.use(cors());
+
+// 🌐 CORS FIX (VERY IMPORTANT)
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173", // local frontend
+      "https://infotact-solution-intern-1.onrender.com", // deployed frontend
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
+
+// 🔥 Handle preflight requests (CRITICAL FIX)
+app.options("*", cors());
+
+// 🧾 Body parser
 app.use(express.json());
+
+// 📊 Logger
 app.use(morgan("dev"));
 
 // ==========================
@@ -43,14 +63,14 @@ app.get("/health", (req, res) => {
 });
 
 // ==========================
-// ✅ API ROUTES (IMPORTANT)
+// ✅ API ROUTES
 // ==========================
 console.log("🔥 LOADING ROUTES...");
 
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/inventory", inventoryRoutes);
-app.use("/api/orders", orderRoutes); // 🔥 CRITICAL
+app.use("/api/orders", orderRoutes);
 app.use("/api/customers", customerRoutes);
 app.use("/api/promotions", promotionRoutes);
 app.use("/api/tax-rules", taxRoutes);
@@ -66,7 +86,7 @@ console.log("✅ ALL ROUTES LOADED");
 setupSwagger(app);
 
 // ==========================
-// ❌ 404 HANDLER (MUST BE LAST)
+// ❌ 404 HANDLER
 // ==========================
 app.use((req, res) => {
   res.status(404).json({
