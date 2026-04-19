@@ -1,235 +1,242 @@
-
-####LIVE WORKING LIKS#####
-https://frontend-g7s0.onrender.com
-
 # 🛒 Retail POS System (Full Stack)
 
-A full-stack **Retail Point of Sale (POS) System** built using the **MERN Stack**.
-This project supports product management, order processing, refunds, authentication, and a modern UI dashboard.
+🚀 A full-stack **Retail Point of Sale (POS) & Inventory Management System** built using the **MERN Stack (MongoDB, Express, React, Node.js)**.
+
+🔗 **Live Demo:** 
 
 ---
 
-# 🚀 Features
+## 📌 Overview
 
-## 🔐 Authentication
+This system simulates a real-world retail environment with:
 
-* Login system (JWT based)
-* Protected routes
-* Logout functionality
-
-## 🛍️ POS System
-
-* Add products to cart
-* Dynamic quantity updates
-* Checkout system
-
-## 📦 Product Management
-
-* Create / View products
-* Variant-based pricing
-* Category support
-
-## 📑 Orders
-
-* Create orders
-* View order history
-* Refund functionality
-
-## 📊 Dashboard
-
-* Sales overview
-* Order tracking
+* Product & inventory management
+* POS billing system
+* Order processing
+* Invoice PDF generation
+* Dashboard analytics
 
 ---
 
-# 🏗️ Project Structure
+## ⚙️ Tech Stack
 
-```
-inventory/
-│
-├── frontend888/        # React Frontend (Vite + Tailwind)
-│   ├── src/
-│   │   ├── pages/
-│   │   ├── components/
-│   │   ├── layouts/
-│   │   ├── api/
-│   │   └── App.jsx
-│
-├── retail-pos-backend/ # Node.js Backend (Express + MongoDB)
-│   ├── src/
-│   │   ├── controllers/
-│   │   ├── services/
-│   │   ├── models/
-│   │   ├── routes/
-│   │   └── server.js
-```
+### 🔹 Frontend
 
----
-
-# ⚙️ Tech Stack
-
-## Frontend
-
-* React (Vite)
+* React.js (Vite)
 * Tailwind CSS
 * Axios
-* React Router
+* Recharts
 
-## Backend
+### 🔹 Backend
 
 * Node.js
 * Express.js
 * MongoDB (Mongoose)
 * JWT Authentication
+* PDFKit (Invoice generation)
+* Redis (optional caching)
 
 ---
 
-# 🧠 Architecture
+## 🏗️ Project Architecture
 
 ```
-Frontend (React)
-   ↓ API Calls (Axios)
-Backend (Express)
-   ↓
-Controllers → Services → Models
-   ↓
-MongoDB Database
+Retail POS System
+│
+├── frontend/                 # React Frontend (Vite)
+│   ├── src/
+│   │   ├── components/       # UI Components
+│   │   ├── pages/            # Pages (Dashboard, POS, Products)
+│   │   ├── api/              # API Calls (Axios)
+│   │   ├── context/          # State Management
+│   │   └── App.jsx
+│   └── package.json
+│
+├── backend/                  # Node.js Backend
+│   ├── src/
+│   │   ├── controllers/      # Business Logic
+│   │   ├── models/           # Mongoose Models
+│   │   ├── routes/           # API Routes
+│   │   ├── middlewares/      # Auth & Error Handling
+│   │   ├── utils/            # Helpers (seed, etc.)
+│   │   └── server.js
+│   └── package.json
+│
+└── README.md
 ```
 
 ---
 
-# 📦 Installation Guide
+## 🔐 Features
 
-## 🔹 1. Clone Repository
+### 🔑 Authentication
+
+* JWT-based login system
+* Protected routes
+
+### 📦 Product Management
+
+* Add / Edit / Delete products
+* Variants (SKU, size, color, price)
+* Category & brand filtering
+
+### 📊 Dashboard
+
+* Revenue tracking
+* Sales trends (charts)
+* Top products
+* Low stock alerts
+
+### 🛒 POS System
+
+* Add to cart
+* Real-time billing
+* Checkout system
+* Order creation
+
+### 📦 Inventory Management
+
+* Stock tracking per store
+* Add stock functionality
+* SKU-based lookup
+
+### 🧾 Invoice System
+
+* Generate invoice after order
+* Download PDF invoice
+* Includes product, quantity, total
+
+---
+
+## 🔄 Data Flow
 
 ```
-git clone https://github.com/YOUR_USERNAME/retail-pos.git
-cd retail-pos
+POS → Checkout → Order Created → OrderLineItems Saved
+        ↓
+   Inventory Updated
+        ↓
+   Invoice Generated (PDF)
+        ↓
+   Dashboard Updated
 ```
 
 ---
 
-## 🔹 2. Backend Setup
+## 🚀 Installation Guide
 
+### 🔧 1. Clone Repository
+
+```bash
+git clone https://github.com/baruahbedarshi949-blip/Infotact_project1.git
+cd Infotact_project1
 ```
-cd retail-pos-backend
+
+---
+
+### 🔧 2. Setup Backend
+
+```bash
+cd backend
 npm install
 ```
 
-### Create `.env`
+Create `.env` file:
 
-```
+```env
 PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=secret123
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_secret
 ```
 
-### Run Backend
+Run backend:
 
-```
-npm start
+```bash
+npm run dev
 ```
 
 ---
 
-## 🔹 3. Frontend Setup
+### 🔧 3. Setup Frontend
 
-```
-cd ../frontend888
+```bash
+cd frontend
 npm install
 npm run dev
 ```
 
 ---
 
-# 🌐 Application URLs
+## 🌐 API Endpoints (Sample)
 
-* Frontend: http://localhost:5173
-* Backend: http://localhost:5000
+| Method | Endpoint              | Description      |
+| ------ | --------------------- | ---------------- |
+| POST   | /api/auth/login       | Login            |
+| GET    | /api/products         | Get products     |
+| POST   | /api/orders           | Create order     |
+| GET    | /api/invoices/:id/pdf | Download invoice |
 
 ---
 
-# 🔑 Default Login
+## 📁 Environment Variables
 
+Create `.env` in backend:
+
+```env
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_secret
+REDIS_URL=optional
 ```
-Email: admin@gmail.com
-Password: 123456
-```
 
 ---
 
-# 📡 API Endpoints
+## 🧪 Testing Flow
 
-## Auth
-
-* POST `/api/auth/login`
-
-## Products
-
-* GET `/api/products`
-* POST `/api/products`
-
-## Orders
-
-* POST `/api/orders`
-* GET `/api/orders`
-* POST `/api/orders/:id/refund`
+1. Add product with variant
+2. Add stock
+3. Go to POS → create order
+4. Download invoice
+5. Check dashboard
 
 ---
 
-# 🧪 How to Use
+## 🧠 Key Learnings
 
-1. Login to the system
-2. Add products from Products page
-3. Go to POS → add to cart
-4. Click Checkout
-5. View orders in Orders page
-6. Perform refund if needed
-
----
-
-# 🎨 UI Theme
-
-* Light Green Modern Theme 🌿
-* Clean dashboard layout
-* Responsive design
+* Full-stack architecture design
+* REST API development
+* MongoDB schema design
+* Real-world POS workflow
+* Authentication & authorization
+* PDF generation
 
 ---
 
-# 🛡️ Security Notes
+## 📌 Future Improvements
 
-* JWT-based authentication
-* Protected routes
-* Token stored in localStorage
-
----
-
-# 🚀 Future Improvements
-
-* Role-based access control
-* Invoice generation (PDF)
+* GST billing format 🇮🇳
+* Email invoice sending
+* Multi-store support
+* Advanced analytics
 * Payment gateway integration
-* Advanced analytics dashboard
 
 ---
 
-# 💼 Resume Worthy Highlights
-
-* Built full-stack MERN application
-* Implemented POS workflow with real-time updates
-* Designed RESTful APIs with proper architecture
-* Integrated authentication and authorization
-* Created responsive UI with Tailwind
-
----
-
-# 👨‍💻 Author
+## 👨‍💻 Author
 
 **Bedarshi Baruah (Bony)**
-Full Stack Developer 🚀
+📧 [baruahbedarshi949@gmail.com](mailto:baruahbedarshi949@gmail.com)
 
 ---
 
-# ⭐ If you like this project
+## ⭐ Show Your Support
 
-Give it a ⭐ on GitHub!
+If you like this project:
+
+👉 Star ⭐ the repository
+👉 Fork 🍴 and improve
+👉 Share 🚀
+
+---
+
+## 📜 License
+
+This project is for educational purposes.
