@@ -1,6 +1,6 @@
 
 ####LIVE WORKING LIKS#####
-https://frontend-g7s0.onrender.com/dashboard
+https://frontend-g7s0.onrender.com
 
 # 🛒 Retail POS System (Full Stack)
 
