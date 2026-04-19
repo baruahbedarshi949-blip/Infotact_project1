@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://infotact-project1-e9it.onrender.com",
+  baseURL: "https://infotact-project1-e9it.onrender.com/api",
 });
 
 // 🔐 Attach token automatically
