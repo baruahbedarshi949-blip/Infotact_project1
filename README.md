@@ -8,6 +8,10 @@ https://infotact-project1-2-0pl0.onrender.com
 
 ## 📌 Overview
 
+SIgn IN credentials:
+gmail : admin@gmail.com
+password : 123456
+
 This system simulates a real-world retail environment with:
 
 * Product & inventory management
