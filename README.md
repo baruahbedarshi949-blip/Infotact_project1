@@ -227,7 +227,8 @@ REDIS_URL=optional
 ## 👨‍💻 Author
 
 **Bedarshi Baruah (Bony)**
-📧 [baruahbedarshi949@gmail.com](mailto:baruahbedarshi949@gmail.com)
+📧 [baruahbedarshi949@gmail.com](mailto:baruahbedarshi949@gmail.com) bedarshi9@gmail.com
+
 
 ---
 
