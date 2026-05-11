@@ -1,7 +1,8 @@
 
-####LIVE WORKING LIKS#####
-https://frontend-g7s0.onrender.com
+####LIVE WORKING LIKS####
 
+
+](https://infotact-project1-2-0pl0.onrender.com)
 # 🛒 Retail POS System (Full Stack)
 
 A full-stack **Retail Point of Sale (POS) System** built using the **MERN Stack**.
