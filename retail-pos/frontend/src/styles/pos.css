@@ -491,3 +491,7 @@
 .variant-row span {
   color: #64748b;
 }
+.archived-product {
+  opacity: 0.65;
+  border: 1px dashed #94a3b8;
+}
