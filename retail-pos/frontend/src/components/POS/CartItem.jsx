@@ -1,3 +1,5 @@
+
+//Cart Item.jsx Corrected
 export default function CartItem({ item, onIncrease, onDecrease, onRemove }) {
   return (
     <div className="cart-item">
