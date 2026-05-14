@@ -1,3 +1,6 @@
+
+//ADDED SIDEBAR NEW COMPONENT
+// COmneted not required
 import {
   LayoutDashboard,
   ShoppingCart,
@@ -65,7 +68,7 @@ export default function Sidebar() {
               <span>Add Stock</span>
             </NavLink>
           )}
-
+          
           {/* {role === "system_admin" && (
             <NavLink to="/register" className={navClass}>
               <UserPlus size={18} />
