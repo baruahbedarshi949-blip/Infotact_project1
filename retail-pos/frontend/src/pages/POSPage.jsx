@@ -1,3 +1,5 @@
+
+//POS MINIMZED the styling
 import { useEffect, useState } from "react";
 import { getProducts } from "../api/product.api";
 import { getStores } from "../api/store.api";
