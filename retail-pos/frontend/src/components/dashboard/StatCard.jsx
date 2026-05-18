@@ -1,5 +1,5 @@
 
-//DasBOARD
+//DasBOARD Corrected
 export default function StatCard({ title, value, subtitle }) {
   return (
     <div className="stat-card">
