@@ -1,3 +1,5 @@
+
+//UpDated TOPBAR LINES MADE BOLD
 import { useAuth } from "../../context/AuthContext";
 
 export default function Topbar({ title, subtitle }) {
